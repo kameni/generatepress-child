@@ -54,18 +54,13 @@ color: #0f172a;
     overflow: hidden;
 }
 
-.pc-rating-preview::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 94px;
-    background: #6b7f72;
-}
-
 .pc-rating-preview .pc-rating-score {
     position: relative;
     z-index: 1;
     grid-column: 1;
+    align-self: stretch;
+    background: #6b7f72;
+    border-radius: 8px;
     font-size: 30px;
     font-weight: 800;
     line-height: 1.05;
