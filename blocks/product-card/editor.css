@@ -44,7 +44,11 @@ color: #0f172a;
     position: relative;
     display: grid;
     grid-template-columns: 94px 1fr;
-    align-items: center;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "score title"
+        "score stars"
+        "score subheader";
     gap: 12px;
     min-width: 230px;
     padding: 10px 16px;
@@ -57,8 +61,7 @@ color: #0f172a;
 .pc-rating-preview .pc-rating-score {
     position: relative;
     z-index: 1;
-    grid-column: 1;
-    align-self: stretch;
+    grid-area: score;
     background: #6b7f72;
     border-radius: 8px;
     font-size: 30px;
@@ -74,7 +77,7 @@ color: #0f172a;
 .pc-rating-preview .pc-rating-title {
     position: relative;
     z-index: 1;
-    grid-column: 2;
+    grid-area: title;
     font-weight: 800;
     font-size: 13px;
     letter-spacing: 0.03em;
@@ -86,7 +89,7 @@ color: #0f172a;
 .pc-rating-preview .pc-rating-stars {
     position: relative;
     z-index: 1;
-    grid-column: 2;
+    grid-area: stars;
     display: inline-flex;
     gap: 5px;
     color: #fbbf24;
@@ -102,7 +105,7 @@ color: #0f172a;
 .pc-rating-preview .pc-rating-subheader {
     position: relative;
     z-index: 1;
-    grid-column: 2;
+    grid-area: subheader;
     font-size: 12px;
     color: #6b7280;
 }
