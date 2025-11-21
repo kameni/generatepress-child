@@ -41,12 +41,49 @@ color: #0f172a;
 }
 
 .pc-rating-preview {
-justify-self: end;
-text-align: right;
-background: #f8fafc;
-padding: 8px 10px;
-border-radius: 10px;
-border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 150px;
+    padding: 16px 18px;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.pc-rating-preview .pc-rating-score {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.pc-rating-preview .pc-rating-title {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.pc-rating-preview .pc-rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    color: #fbbf24;
+    margin: 2px 0;
+}
+
+.pc-rating-preview .pc-rating-stars .pc-star-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.pc-rating-preview .pc-rating-subheader {
+    font-size: 12px;
+    color: #475569;
 }
 
 .pc-bullets-preview {
