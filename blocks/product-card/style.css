@@ -88,15 +88,19 @@ line-height: 1.35;
 .wp-block-generatepress-child-product-card .pc-rating::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 10px;
+    bottom: 10px;
+    left: 16px;
     width: 94px;
     background: #6b7f72;
+    border-radius: 8px;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-score {
     position: relative;
     z-index: 1;
     grid-column: 1;
+    grid-row: 1 / -1;
     font-size: 30px;
     font-weight: 800;
     color: #ffffff;
