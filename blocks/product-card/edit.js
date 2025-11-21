@@ -22,7 +22,7 @@ onChange: ( newValue ) => onChange( newValue || '' ),
 } );
 
 const iconPanel = ( attributes, setAttributes, prefix, label ) =>
-sel(
+el(
 PanelBody,
 { title: label, initialOpen: false },
 [
@@ -38,7 +38,7 @@ value: attributes[ `${ prefix }IconSvg` ],
 onChange: ( value ) => setAttributes( { [ `${ prefix }IconSvg` ]: value } ),
 help: __( 'Paste trusted SVG markup to override the core icon.', 'generatepress-child' ),
 } ),
-sel( ToggleControl, {
+el( ToggleControl, {
 label: __( 'Use custom SVG', 'generatepress-child' ),
 checked: attributes[ `${ prefix }IconSource` ] === 'custom',
 onChange: ( value ) => setAttributes( { [ `${ prefix }IconSource` ]: value ? 'custom' : 'core' } ),
@@ -82,24 +82,24 @@ el(
 InspectorControls,
 null,
 [
-sel(
+el(
 PanelBody,
 { title: __( 'Layout & Card', 'generatepress-child' ), initialOpen: true },
 [
-sel( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.cardBackgroundColor, ( value ) => setAttributes( { cardBackgroundColor: value } ) ) ),
+el( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.cardBackgroundColor, ( value ) => setAttributes( { cardBackgroundColor: value } ) ) ),
 el( TextControl, {
 label: __( 'Border color', 'generatepress-child' ),
 value: attributes.cardBorderColor,
 onChange: ( value ) => setAttributes( { cardBorderColor: value } ),
 } ),
-sel( RangeControl, {
+el( RangeControl, {
 label: __( 'Border radius', 'generatepress-child' ),
 min: 0,
 max: 48,
 value: attributes.cardBorderRadius,
 onChange: ( value ) => setAttributes( { cardBorderRadius: value } ),
 } ),
-sel( RangeControl, {
+el( RangeControl, {
 label: __( 'Row spacing', 'generatepress-child' ),
 min: 0,
 max: 48,
@@ -108,60 +108,60 @@ onChange: ( value ) => setAttributes( { rowSpacing: value } ),
 } ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'Banner', 'generatepress-child' ), initialOpen: false },
 [
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Banner text', 'generatepress-child' ),
 value: attributes.bannerText,
 onChange: ( value ) => setAttributes( { bannerText: value } ),
 } ),
-sel( BaseControl, { label: __( 'Banner color 1', 'generatepress-child' ) }, colorPalette( attributes.bannerColor1, ( value ) => setAttributes( { bannerColor1: value } ) ) ),
-sel( BaseControl, { label: __( 'Banner color 2', 'generatepress-child' ) }, colorPalette( attributes.bannerColor2, ( value ) => setAttributes( { bannerColor2: value } ) ) ),
-sel( BaseControl, { label: __( 'Text color', 'generatepress-child' ) }, colorPalette( attributes.bannerTextColor, ( value ) => setAttributes( { bannerTextColor: value } ) ) ),
-sel( ToggleControl, {
+el( BaseControl, { label: __( 'Banner color 1', 'generatepress-child' ) }, colorPalette( attributes.bannerColor1, ( value ) => setAttributes( { bannerColor1: value } ) ) ),
+el( BaseControl, { label: __( 'Banner color 2', 'generatepress-child' ) }, colorPalette( attributes.bannerColor2, ( value ) => setAttributes( { bannerColor2: value } ) ) ),
+el( BaseControl, { label: __( 'Text color', 'generatepress-child' ) }, colorPalette( attributes.bannerTextColor, ( value ) => setAttributes( { bannerTextColor: value } ) ) ),
+el( ToggleControl, {
 label: __( 'Use gradient', 'generatepress-child' ),
 checked: attributes.bannerUseGradient,
 onChange: ( value ) => setAttributes( { bannerUseGradient: value } ),
 } ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'Header & Rating', 'generatepress-child' ), initialOpen: false },
 [
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Order number', 'generatepress-child' ),
 value: attributes.orderNumber,
 onChange: ( value ) => setAttributes( { orderNumber: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Title', 'generatepress-child' ),
 value: attributes.title,
 onChange: ( value ) => setAttributes( { title: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Subheader', 'generatepress-child' ),
 value: attributes.subheaderText,
 onChange: ( value ) => setAttributes( { subheaderText: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Rating score', 'generatepress-child' ),
 value: attributes.ratingScore,
 onChange: ( value ) => setAttributes( { ratingScore: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Rating title', 'generatepress-child' ),
 value: attributes.ratingTitle,
 onChange: ( value ) => setAttributes( { ratingTitle: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Rating subheader', 'generatepress-child' ),
 value: attributes.ratingSubheader,
 onChange: ( value ) => setAttributes( { ratingSubheader: value } ),
 } ),
-sel( RangeControl, {
+el( RangeControl, {
 label: __( 'Star count', 'generatepress-child' ),
 min: 0,
 max: 5,
@@ -170,22 +170,22 @@ onChange: ( value ) => setAttributes( { ratingStarsCount: value } ),
 } ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'Bullets', 'generatepress-child' ), initialOpen: false },
 [
 attributes.bullets.map( ( bullet ) =>
-sel(
+el(
 'div',
 { key: bullet.id, className: 'pc-bullet-row' },
 [
-sel( RichText, {
+el( RichText, {
 tagName: 'div',
 value: bullet.text,
 onChange: ( value ) => updateBullet( bullet.id, value ),
 placeholder: __( 'Bullet text…', 'generatepress-child' ),
 } ),
-sel(
+el(
 Button,
 { variant: 'secondary', onClick: () => removeBullet( bullet.id ) },
 __( 'Remove', 'generatepress-child' )
@@ -193,46 +193,46 @@ __( 'Remove', 'generatepress-child' )
 ]
 )
 ),
-sel( Button, { variant: 'primary', onClick: addBullet }, __( 'Add bullet', 'generatepress-child' ) ),
+el( Button, { variant: 'primary', onClick: addBullet }, __( 'Add bullet', 'generatepress-child' ) ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'Offer pill', 'generatepress-child' ), initialOpen: false },
 [
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Offer text', 'generatepress-child' ),
 value: attributes.offerText,
 onChange: ( value ) => setAttributes( { offerText: value } ),
 } ),
-sel( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.offerBackgroundColor, ( value ) => setAttributes( { offerBackgroundColor: value } ) ) ),
-sel( TextControl, {
+el( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.offerBackgroundColor, ( value ) => setAttributes( { offerBackgroundColor: value } ) ) ),
+el( TextControl, {
 label: __( 'Border color', 'generatepress-child' ),
 value: attributes.offerBorderColor,
 onChange: ( value ) => setAttributes( { offerBorderColor: value } ),
 } ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'CTA button', 'generatepress-child' ), initialOpen: false },
 [
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Button text', 'generatepress-child' ),
 value: attributes.ctaText,
 onChange: ( value ) => setAttributes( { ctaText: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Button URL', 'generatepress-child' ),
 value: attributes.ctaUrl,
 onChange: ( value ) => setAttributes( { ctaUrl: value } ),
 } ),
-sel( ToggleControl, {
+el( ToggleControl, {
 label: __( 'Open in new tab', 'generatepress-child' ),
 checked: attributes.ctaOpenInNewTab,
 onChange: ( value ) => setAttributes( { ctaOpenInNewTab: value } ),
 } ),
-sel(
+el(
 ButtonGroup,
 null,
 [
@@ -241,30 +241,30 @@ el( Button, { variant: attributes.ctaWidth === 'full' ? 'primary' : 'secondary',
 el( Button, { variant: attributes.ctaWidth === 'fixed-centered' ? 'primary' : 'secondary', onClick: () => setAttributes( { ctaWidth: 'fixed-centered' } ) }, __( 'Fixed centered', 'generatepress-child' ) ),
 ]
 ),
-sel( BaseControl, { label: __( 'Button background', 'generatepress-child' ) }, colorPalette( attributes.ctaBackgroundColor, ( value ) => setAttributes( { ctaBackgroundColor: value } ) ) ),
-sel( BaseControl, { label: __( 'Button text color', 'generatepress-child' ) }, colorPalette( attributes.ctaTextColor, ( value ) => setAttributes( { ctaTextColor: value } ) ) ),
+el( BaseControl, { label: __( 'Button background', 'generatepress-child' ) }, colorPalette( attributes.ctaBackgroundColor, ( value ) => setAttributes( { ctaBackgroundColor: value } ) ) ),
+el( BaseControl, { label: __( 'Button text color', 'generatepress-child' ) }, colorPalette( attributes.ctaTextColor, ( value ) => setAttributes( { ctaTextColor: value } ) ) ),
 ]
 ),
-sel(
+el(
 PanelBody,
 { title: __( 'Footer & Link', 'generatepress-child' ), initialOpen: false },
 [
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Footer text', 'generatepress-child' ),
 value: attributes.footerText,
 onChange: ( value ) => setAttributes( { footerText: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Bottom link text', 'generatepress-child' ),
 value: attributes.bottomLinkText,
 onChange: ( value ) => setAttributes( { bottomLinkText: value } ),
 } ),
-sel( TextControl, {
+el( TextControl, {
 label: __( 'Bottom link URL', 'generatepress-child' ),
 value: attributes.bottomLinkUrl,
 onChange: ( value ) => setAttributes( { bottomLinkUrl: value } ),
 } ),
-sel( ToggleControl, {
+el( ToggleControl, {
 label: __( 'Open link in new tab', 'generatepress-child' ),
 checked: attributes.bottomLinkOpenInNewTab,
 onChange: ( value ) => setAttributes( { bottomLinkOpenInNewTab: value } ),
@@ -278,10 +278,10 @@ iconPanel( attributes, setAttributes, 'cta', __( 'CTA icon', 'generatepress-chil
 iconPanel( attributes, setAttributes, 'bottomLink', __( 'Bottom link icon', 'generatepress-child' ) ),
 ]
 ),
-sel(
+el(
 'div',
 blockProps,
-sel(
+el(
 'div',
 { className: 'pc-card-preview' },
 [
@@ -295,7 +295,7 @@ el(
 'div',
 null,
 [
-sel( RichText, {
+el( RichText, {
 tagName: attributes.titleHeadingLevel || 'h3',
 className: 'pc-title-preview',
 style: headerStyles,
@@ -303,7 +303,7 @@ value: attributes.title,
 onChange: ( value ) => setAttributes( { title: value } ),
 placeholder: __( 'Product title…', 'generatepress-child' ),
 } ),
-sel( RichText, {
+el( RichText, {
 tagName: 'div',
 className: 'pc-subheader-preview',
 style: subheaderStyles,
@@ -325,7 +325,7 @@ el( 'div', { className: 'pc-rating-subheader' }, attributes.ratingSubheader ),
 ]
 ),
 attributes.bullets && attributes.bullets.length > 0 &&
-sel(
+el(
 'ul',
 { className: 'pc-bullets-preview' },
 attributes.bullets.map( ( bullet ) => el( 'li', { key: bullet.id }, bullet.text ) )

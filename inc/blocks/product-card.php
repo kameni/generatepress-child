@@ -171,7 +171,9 @@ $attributes = wp_parse_args( $attributes, array(
 'rowSpacing'              => 16,
 ) );
 
-$has_rating = ! empty( $attributes['ratingScore'] ) || ! empty( $attributes['ratingTitle'] ) || ! empty( $attributes['ratingSubheader'] );
+$has_rating = ! empty( $attributes['ratingScore'] ) || ! empty( $attributes['ratingTitle'] ) || ! empty( $attributes['ratingSubheader'] ) || intval( $attributes['ratingStarsCount'] ) > 0;
+
+$rating_star_markup = generatepress_child_product_card_core_icon( 'star-filled' );
 
 $style_parts = array();
 if ( $attributes['cardBackgroundColor'] ) {
@@ -283,10 +285,10 @@ ob_start();
 <?php if ( $attributes['ratingTitle'] ) : ?>
 <div class="pc-rating-title"><?php echo esc_html( $attributes['ratingTitle'] ); ?></div>
 <?php endif; ?>
-<?php if ( $attributes['ratingStarsCount'] ) : ?>
-<div class="pc-rating-stars">
+<?php if ( $attributes['ratingStarsCount'] && $rating_star_markup ) : ?>
+<div class="pc-rating-stars" aria-hidden="true">
 <?php for ( $i = 0; $i < intval( $attributes['ratingStarsCount'] ); $i++ ) : ?>
-<?php echo generatepress_child_product_card_render_icon( $attributes, 'bulletsIconSource', 'bulletsIconName', 'bulletsIconSvg', 'pc-star-icon' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<span class="pc-star-icon"><?php echo $rating_star_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 <?php endfor; ?>
 </div>
 <?php endif; ?>
