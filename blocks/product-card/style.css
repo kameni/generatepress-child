@@ -16,15 +16,15 @@ gap: var(--pc-row-gap, 16px);
 
 .wp-block-generatepress-child-product-card .pc-banner {
 position: absolute;
-top: -14px;
-left: 18px;
+top: 0;
+left: 0;
 display: inline-flex;
 align-items: center;
 gap: 8px;
 padding: 8px 14px;
 background: linear-gradient(90deg, #ff8a00 0%, #ff5a1f 100%);
 color: #fff;
-border-radius: 12px;
+border-radius: 12px 0 12px 0;
 font-weight: 700;
 font-size: 13px;
 letter-spacing: 0.01em;
@@ -46,7 +46,7 @@ flex: 1;
 }
 
 .wp-block-generatepress-child-product-card .pc-order-number {
-font-size: 34px;
+font-size: 60px;
 font-weight: 800;
 color: #0f172a;
 min-width: 34px;
@@ -56,7 +56,7 @@ line-height: 1;
 .wp-block-generatepress-child-product-card .pc-title {
 margin: 0;
 font-weight: 800;
-font-size: 24px;
+font-size: 32px;
 line-height: 1.25;
 color: #0f172a;
 }
