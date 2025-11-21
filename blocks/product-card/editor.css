@@ -43,12 +43,12 @@ color: #0f172a;
 .pc-rating-preview {
     position: relative;
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 94px 1fr;
     align-items: center;
-    gap: 16px;
-    min-width: 260px;
-    padding: 12px 20px;
-    border-radius: 14px;
+    gap: 12px;
+    min-width: 230px;
+    padding: 10px 16px;
+    border-radius: 12px;
     background: #f7fbf9;
     border: 1px solid #e4ebe6;
     overflow: hidden;
@@ -58,7 +58,7 @@ color: #0f172a;
     content: '';
     position: absolute;
     inset: 0;
-    width: 110px;
+    width: 94px;
     background: #6b7f72;
 }
 
@@ -70,6 +70,9 @@ color: #0f172a;
     font-weight: 800;
     line-height: 1.05;
     color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -78,7 +81,7 @@ color: #0f172a;
     z-index: 1;
     grid-column: 2;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #334155;
@@ -90,14 +93,14 @@ color: #0f172a;
     z-index: 1;
     grid-column: 2;
     display: inline-flex;
-    gap: 6px;
+    gap: 5px;
     color: #fbbf24;
     margin: 0 0 2px;
 }
 
 .pc-rating-preview .pc-rating-stars .pc-star-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     display: block;
 }
 
