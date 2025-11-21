@@ -68,55 +68,77 @@ font-size: 15px;
 line-height: 1.35;
 }
 
+
 .wp-block-generatepress-child-product-card .pc-rating {
+    position: relative;
     display: grid;
-    grid-auto-rows: max-content;
-    justify-items: center;
-    gap: 8px;
-    min-width: 160px;
-    max-width: 200px;
-    padding: 18px 20px 20px;
-    border-radius: 16px;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 16px;
+    min-width: 260px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: #f7fbf9;
+    border: 1px solid #e4ebe6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    color: #1f2937;
+    overflow: hidden;
+}
+
+.wp-block-generatepress-child-product-card .pc-rating::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 110px;
     background: #6b7f72;
-    border: none;
-    text-align: center;
-    color: #f8fafc;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    align-self: center;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-score {
-    font-size: 32px;
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    font-size: 30px;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
+    text-align: center;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-title {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
     font-weight: 800;
     font-size: 14px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
+    color: #334155;
+    margin-bottom: 2px;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-stars {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+    display: inline-flex;
+    gap: 6px;
     color: #fbbf24;
-    margin: 4px 0 2px;
+    margin: 0 0 2px;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-stars .pc-star-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: block;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-subheader {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
     font-size: 12px;
-    color: #e2e8f0;
-    line-height: 1.4;
+    color: #6b7280;
+    line-height: 1.35;
 }
 
 .wp-block-generatepress-child-product-card .pc-bullets {
