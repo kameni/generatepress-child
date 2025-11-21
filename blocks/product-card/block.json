@@ -84,7 +84,11 @@
       "type": "object",
       "default": { "top": "", "right": "", "bottom": "", "left": "" }
     },
-    "cardMargin": { "type": "object", "default": {} },
+    "cardMargin": {
+      "type": "object",
+      "default": { "top": "", "right": "", "bottom": "", "left": "" }
+    },
+    "cardMaxWidth": { "type": "string", "default": "" },
     "rowSpacing": { "type": "number", "default": 16 }
   },
   "editorScript": "file:./edit.js",
