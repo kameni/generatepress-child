@@ -26,3 +26,10 @@ function generatepress_child_enqueue_styles() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_styles', 20 );
+/**
+ * Load custom blocks.
+ */
+function generatepress_child_load_blocks() {
+	require_once get_stylesheet_directory() . '/inc/blocks/product-card.php';
+}
+add_action( 'after_setup_theme', 'generatepress_child_load_blocks' );
