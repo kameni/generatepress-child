@@ -2,10 +2,10 @@
 position: relative;
 display: block;
 border: 1px solid var(--pc-border, #e5e7eb);
-border-radius: 16px;
+border-radius: 18px;
 background: #fff;
-padding: 24px;
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+padding: 26px 28px 28px;
+box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
 }
 
 .wp-block-generatepress-child-product-card .pc-inner {
@@ -16,24 +16,26 @@ gap: var(--pc-row-gap, 16px);
 
 .wp-block-generatepress-child-product-card .pc-banner {
 position: absolute;
-top: -10px;
-left: 16px;
+top: -14px;
+left: 18px;
 display: inline-flex;
 align-items: center;
 gap: 8px;
-padding: 8px 12px;
-background: #2563eb;
+padding: 8px 14px;
+background: linear-gradient(90deg, #ff8a00 0%, #ff5a1f 100%);
 color: #fff;
 border-radius: 12px;
-font-weight: 600;
+font-weight: 700;
 font-size: 13px;
+letter-spacing: 0.01em;
+box-shadow: 0 8px 20px rgba(255, 90, 31, 0.25);
 }
 
 .wp-block-generatepress-child-product-card .pc-header {
 display: flex;
-align-items: center;
+align-items: flex-start;
 justify-content: space-between;
-gap: 12px;
+gap: 16px;
 }
 
 .wp-block-generatepress-child-product-card .pc-header-left {
@@ -44,58 +46,66 @@ flex: 1;
 }
 
 .wp-block-generatepress-child-product-card .pc-order-number {
-font-size: 32px;
+font-size: 34px;
 font-weight: 800;
 color: #0f172a;
-min-width: 32px;
+min-width: 34px;
+line-height: 1;
 }
 
 .wp-block-generatepress-child-product-card .pc-title {
 margin: 0;
-font-weight: 700;
-font-size: 22px;
-line-height: 1.2;
+font-weight: 800;
+font-size: 24px;
+line-height: 1.25;
+color: #0f172a;
 }
 
 .wp-block-generatepress-child-product-card .pc-subheader {
 margin-top: 4px;
 color: #475569;
-font-size: 14px;
+font-size: 15px;
+line-height: 1.35;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating {
-min-width: 160px;
-padding: 12px;
+min-width: 132px;
+padding: 12px 14px;
 border-radius: 12px;
-background: #f8fafc;
-border: 1px solid #e2e8f0;
-text-align: right;
+background: #6b7f72;
+border: none;
+text-align: center;
+color: #f8fafc;
+box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+align-self: flex-start;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-score {
 font-size: 30px;
 font-weight: 800;
-color: #0ea5e9;
+color: #ffffff;
 line-height: 1;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-title {
-font-weight: 700;
-margin-top: 4px;
+font-weight: 800;
+margin-top: 6px;
+font-size: 13px;
+letter-spacing: 0.01em;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-stars {
 display: flex;
-justify-content: flex-end;
+justify-content: center;
 gap: 4px;
 color: #fbbf24;
-margin-top: 6px;
+margin-top: 8px;
 }
 
 .wp-block-generatepress-child-product-card .pc-rating-subheader {
-margin-top: 6px;
+margin-top: 8px;
 font-size: 12px;
-color: #475569;
+color: #e2e8f0;
 }
 
 .wp-block-generatepress-child-product-card .pc-bullets {
@@ -115,16 +125,26 @@ color: #111827;
 font-size: 15px;
 }
 
+.wp-block-generatepress-child-product-card .pc-bullet-icon {
+color: #16a34a;
+margin-top: 2px;
+}
+
 .wp-block-generatepress-child-product-card .pc-offer {
 display: inline-flex;
 align-items: center;
 gap: 10px;
 padding: 10px 14px;
-border: 1px solid #cbd5e1;
+border: 1px dotted #e879f9;
 border-radius: 999px;
-background: #f0f9ff;
-font-weight: 600;
+background: #fff8ff;
+font-weight: 700;
+font-size: 14px;
 color: #0f172a;
+}
+
+.wp-block-generatepress-child-product-card .pc-offer-icon {
+color: #e879f9;
 }
 
 .wp-block-generatepress-child-product-card .pc-cta {
@@ -163,7 +183,8 @@ min-width: 240px;
 .wp-block-generatepress-child-product-card .pc-footer-text {
 color: #475569;
 font-size: 13px;
-line-height: 1.5;
+line-height: 1.6;
+text-align: center;
 }
 
 .wp-block-generatepress-child-product-card .pc-bottom-link a {
@@ -173,10 +194,20 @@ gap: 6px;
 font-weight: 600;
 color: #2563eb;
 text-decoration: none;
+justify-content: center;
 }
 
 .wp-block-generatepress-child-product-card .pc-bottom-link a:hover {
 text-decoration: underline;
+}
+
+.wp-block-generatepress-child-product-card .pc-bottom-link {
+text-align: center;
+}
+
+.wp-block-generatepress-child-product-card .pc-bottom-icon {
+display: inline-flex;
+align-items: center;
 }
 
 @media (max-width: 640px) {

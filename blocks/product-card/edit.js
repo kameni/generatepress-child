@@ -86,26 +86,83 @@ el(
 PanelBody,
 { title: __( 'Layout & Card', 'generatepress-child' ), initialOpen: true },
 [
-el( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.cardBackgroundColor, ( value ) => setAttributes( { cardBackgroundColor: value } ) ) ),
-el( TextControl, {
-label: __( 'Border color', 'generatepress-child' ),
-value: attributes.cardBorderColor,
-onChange: ( value ) => setAttributes( { cardBorderColor: value } ),
-} ),
-el( RangeControl, {
-label: __( 'Border radius', 'generatepress-child' ),
-min: 0,
-max: 48,
-value: attributes.cardBorderRadius,
-onChange: ( value ) => setAttributes( { cardBorderRadius: value } ),
-} ),
-el( RangeControl, {
-label: __( 'Row spacing', 'generatepress-child' ),
-min: 0,
-max: 48,
-value: attributes.rowSpacing,
-onChange: ( value ) => setAttributes( { rowSpacing: value } ),
-} ),
+            el( BaseControl, { label: __( 'Background', 'generatepress-child' ) }, colorPalette( attributes.cardBackgroundColor, ( value ) => setAttributes( { cardBackgroundColor: value } ) ) ),
+            el( TextControl, {
+              label: __( 'Border color', 'generatepress-child' ),
+              value: attributes.cardBorderColor,
+              onChange: ( value ) => setAttributes( { cardBorderColor: value } ),
+            } ),
+            el( RangeControl, {
+              label: __( 'Border radius', 'generatepress-child' ),
+              min: 0,
+              max: 48,
+              value: attributes.cardBorderRadius,
+              onChange: ( value ) => setAttributes( { cardBorderRadius: value } ),
+            } ),
+            el( TextControl, {
+              label: __( 'Max width (e.g. 800px)', 'generatepress-child' ),
+              value: attributes.cardMaxWidth,
+              onChange: ( value ) => setAttributes( { cardMaxWidth: value } ),
+            } ),
+            el( RangeControl, {
+              label: __( 'Row spacing', 'generatepress-child' ),
+              min: 0,
+              max: 48,
+              value: attributes.rowSpacing,
+              onChange: ( value ) => setAttributes( { rowSpacing: value } ),
+            } ),
+            el(
+              'div',
+              { className: 'pc-spacing-grid' },
+              [
+                el( TextControl, {
+                  label: __( 'Padding top', 'generatepress-child' ),
+                  value: attributes.cardPadding?.top,
+                  onChange: ( value ) => setAttributes( { cardPadding: { ...attributes.cardPadding, top: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Padding right', 'generatepress-child' ),
+                  value: attributes.cardPadding?.right,
+                  onChange: ( value ) => setAttributes( { cardPadding: { ...attributes.cardPadding, right: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Padding bottom', 'generatepress-child' ),
+                  value: attributes.cardPadding?.bottom,
+                  onChange: ( value ) => setAttributes( { cardPadding: { ...attributes.cardPadding, bottom: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Padding left', 'generatepress-child' ),
+                  value: attributes.cardPadding?.left,
+                  onChange: ( value ) => setAttributes( { cardPadding: { ...attributes.cardPadding, left: value } } ),
+                } ),
+              ]
+            ),
+            el(
+              'div',
+              { className: 'pc-spacing-grid' },
+              [
+                el( TextControl, {
+                  label: __( 'Margin top', 'generatepress-child' ),
+                  value: attributes.cardMargin?.top,
+                  onChange: ( value ) => setAttributes( { cardMargin: { ...attributes.cardMargin, top: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Margin right', 'generatepress-child' ),
+                  value: attributes.cardMargin?.right,
+                  onChange: ( value ) => setAttributes( { cardMargin: { ...attributes.cardMargin, right: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Margin bottom', 'generatepress-child' ),
+                  value: attributes.cardMargin?.bottom,
+                  onChange: ( value ) => setAttributes( { cardMargin: { ...attributes.cardMargin, bottom: value } } ),
+                } ),
+                el( TextControl, {
+                  label: __( 'Margin left', 'generatepress-child' ),
+                  value: attributes.cardMargin?.left,
+                  onChange: ( value ) => setAttributes( { cardMargin: { ...attributes.cardMargin, left: value } } ),
+                } ),
+              ]
+            ),
 ]
 ),
 el(
@@ -136,16 +193,17 @@ label: __( 'Order number', 'generatepress-child' ),
 value: attributes.orderNumber,
 onChange: ( value ) => setAttributes( { orderNumber: value } ),
 } ),
-el( TextControl, {
-label: __( 'Title', 'generatepress-child' ),
-value: attributes.title,
-onChange: ( value ) => setAttributes( { title: value } ),
-} ),
-el( TextControl, {
-label: __( 'Subheader', 'generatepress-child' ),
-value: attributes.subheaderText,
-onChange: ( value ) => setAttributes( { subheaderText: value } ),
-} ),
+            el( TextControl, {
+              label: __( 'Title', 'generatepress-child' ),
+              value: attributes.title,
+              onChange: ( value ) => setAttributes( { title: value } ),
+            } ),
+            el( BaseControl, { label: __( 'Title color', 'generatepress-child' ) }, colorPalette( attributes.titleColor, ( value ) => setAttributes( { titleColor: value } ) ) ),
+            el( TextControl, {
+              label: __( 'Subheader', 'generatepress-child' ),
+              value: attributes.subheaderText,
+              onChange: ( value ) => setAttributes( { subheaderText: value } ),
+            } ),
 el( TextControl, {
 label: __( 'Rating score', 'generatepress-child' ),
 value: attributes.ratingScore,

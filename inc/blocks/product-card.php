@@ -167,7 +167,13 @@ $attributes = wp_parse_args( $attributes, array(
 'bottom' => '',
 'left'   => '',
 ),
-'cardMargin'              => array(),
+'cardMargin'              => array(
+'top'    => '',
+'right'  => '',
+'bottom' => '',
+'left'   => '',
+),
+'cardMaxWidth'            => '',
 'rowSpacing'              => 16,
 ) );
 
@@ -194,6 +200,24 @@ $style_parts[] = 'box-shadow:' . esc_attr( $attributes['cardBoxShadow'] );
 foreach ( array( 'top', 'right', 'bottom', 'left' ) as $side ) {
 if ( ! empty( $attributes['cardPadding'][ $side ] ) ) {
 $style_parts[] = 'padding-' . $side . ':' . esc_attr( $attributes['cardPadding'][ $side ] );
+}
+}
+foreach ( array( 'top', 'right', 'bottom', 'left' ) as $side ) {
+if ( ! empty( $attributes['cardMargin'][ $side ] ) ) {
+$style_parts[] = 'margin-' . $side . ':' . esc_attr( $attributes['cardMargin'][ $side ] );
+}
+}
+if ( $attributes['cardMaxWidth'] ) {
+$style_parts[] = 'max-width:' . esc_attr( $attributes['cardMaxWidth'] );
+
+$has_left_margin  = ! empty( $attributes['cardMargin']['left'] );
+$has_right_margin = ! empty( $attributes['cardMargin']['right'] );
+
+if ( ! $has_left_margin ) {
+$style_parts[] = 'margin-left:auto';
+}
+if ( ! $has_right_margin ) {
+$style_parts[] = 'margin-right:auto';
 }
 }
 $wrapper_style = implode( ';', $style_parts );
