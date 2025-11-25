@@ -4,7 +4,7 @@ display: block;
 border: 1px solid var(--pc-border, #e5e7eb);
 border-radius: 18px;
 background: #fff;
-padding: 26px 28px 28px;
+padding: 50px 28px 28px;
 box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
 }
 
@@ -206,6 +206,7 @@ transition: transform 0.15s ease, box-shadow 0.15s ease;
 .wp-block-generatepress-child-product-card .pc-cta-button:hover {
 transform: translateY(-1px);
 box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+color: #fff;
 }
 
 .wp-block-generatepress-child-product-card .pc-cta-button.is-full {
@@ -214,6 +215,10 @@ width: 100%;
 
 .wp-block-generatepress-child-product-card .pc-cta-button.is-fixed {
 min-width: 240px;
+}
+
+.pc-cta-icon, .pc-bottom-icon {
+    margin-top: 5px;
 }
 
 .wp-block-generatepress-child-product-card .pc-footer-text {
@@ -260,3 +265,5 @@ justify-items: center;
 align-self: stretch;
 }
 }
+
+
